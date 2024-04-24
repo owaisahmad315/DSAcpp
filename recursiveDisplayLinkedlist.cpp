@@ -36,8 +36,9 @@ void Display(struct Node *p) {
 // Recursive function
 void RDisplay(struct Node *p) {
     if(p != NULL) {
-        cout<<p->data;
+        
         RDisplay(p->next);
+        cout<<p->data;
     }
 }
 
@@ -46,6 +47,8 @@ int main() {
 
     create(A, 5);
     Display(first);
+
+
     RDisplay(first);
 
     return 0;
