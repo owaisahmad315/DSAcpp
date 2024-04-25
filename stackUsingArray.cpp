@@ -97,7 +97,7 @@ int main()
     push(&st, 30);
     
     
-    cout<<"Peek is: "<< peek(st, 1)<<endl;
+    cout<<"Peek is: "<< peek(st, 2)<<endl;
 
     Display(st);
     
