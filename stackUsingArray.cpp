@@ -23,7 +23,8 @@ void Display(struct Stack st)
 {
     int i;
     for(i = st.top; i>=0; i--)
-    cout<<st.S[i];
+        cout<<st.S[i]<<" ";
+    cout<< endl;
 }
 
 
@@ -51,6 +52,40 @@ int pop(struct Stack *st)
     return x;
 }
 
+
+int peek(struct Stack st, int index)
+{
+    int x = -1;
+    if(st.top - index + 1 < 0)
+        cout<<"Invalid index"<<endl;
+    else
+    {
+        x = st.S[st.top-index+1];
+           
+    }
+    return x;
+}
+
+
+int isEmpty(struct Stack st)
+{
+    if(st.top==-1)
+        return 1;
+    return 0;
+}
+
+
+int stackTop(struct Stack st)
+{
+    if(!isEmpty(st))
+        return st.S[st.top];
+    return -1;
+}
+
+int isFull(struct Stack st)
+{
+    return st.top == st.size - 1;
+}
 int main()
 {
     struct Stack st;
@@ -58,12 +93,11 @@ int main()
 
     push(&st, 10);
     push(&st, 15);
+    push(&st, 20);
+    push(&st, 30);
     
     
-    
-    pop(&st);
-    pop(&st);
-    pop(&st);
+    cout<<"Peek is: "<< peek(st, 1)<<endl;
 
     Display(st);
     
