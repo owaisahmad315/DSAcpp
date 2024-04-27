@@ -44,13 +44,18 @@ void Display()
 {
     struct Node *p  = top;
     while(p!= NULL)
+    {
         cout<<p->data<<endl;
         p=p->next;
+    }
+        
 }
 int main()
 { 
-    push(4);
-    push(5);
+    push(10);
+    push(20);
+    push(30);
+   
      
 
     Display();
