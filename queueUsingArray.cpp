@@ -57,8 +57,13 @@ int main()
     enqueue(&q, 10);
     enqueue(&q, 20);
     enqueue(&q, 30);
+    
+    cout<<"Queue Elememts are: "<<endl;
+    display(q);
 
-    display(q   );
+    cout<<"the deleted value is: "<<dequeue(&q)<<endl;
+    cout<<"After deleting one element, now the queue is: "<<endl;
+    display(q);
 
     return 0;
 }
