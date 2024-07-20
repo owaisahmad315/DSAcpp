@@ -1,5 +1,6 @@
 #include <stdio.h>
-#ifndef queueHeaderFile_h
+#ifndef queueHeaderFile_h 
+#endif
 #define queueHeaderFile_h
 
 class Node
@@ -58,7 +59,7 @@ Node* Queue::dequeue()
 {
     Node* x = NULL;
     if(front == rear)
-        print("Queue is Empty\n");
+        printf("Queue is Empty\n");
     else
     {
         x = Q[front + 1];
@@ -71,5 +72,5 @@ void Queue::display()
 {
     for(int i = front+1; i<= rear; i++)
         printf("%d", Q[i]);
-    printf("\n")
+    printf("\n");
 }
