@@ -17,8 +17,7 @@ class Tree
         void Inorder(Node *p); // function to traverse the tree in inorder
         void Levelorder(Node *p); // function to traverse the tree in level order
         int Height(Node *root); // function to calculate the height of the tree
-        int BinarySearch(Node *t, int key); // function to search a value in binary search tree
- };
+  };
 
 // Function to create the tree
 void Tree::CreateTree()
@@ -136,18 +135,7 @@ int Tree::Height(Node *root)
         return y + 1;
 }
 
-// Function to search a value in binary search tree
-int Tree::BinarySearch(Node *t, int key) {
-    if (t == NULL) // if the node is NULL, return NULL
-        return NULL;
-    else if(key == t->data) // if the key is found, return the key
-        return t->data;
-    else if (key < t->data) // if the key is smaller than the node data, search in the left subtree
-        return BinarySearch(t->lchild, key);
-    else // if the key is larger than the node data, search in the right subtree
-        return BinarySearch(t->rchild, key);
-}
-
+ 
 
 // Main function
 int main()
@@ -170,10 +158,7 @@ int main()
     t.Levelorder(t.root); // traverse the tree in level order
     cout << endl;
 
-     int key = 4; // specify the key to be searched
-    cout << "BST: value is:  ";
-    cout<<t.BinarySearch(t.root, key); // search the key in binary search tree
-    cout << endl;
+     
 
      
 
