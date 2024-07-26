@@ -70,18 +70,45 @@ struct Node *Search(int key)
     return NULL;
 }   
 
+// recursive insertion
+struct Node *Rinsert(struct Node *p, int key)
+{
+    struct Node *t = NULL;
+    if(p == NULL)
+    {
+        t = new Node();
+        t->data = key;
+        t->lchild = t->rchild = NULL;
+        return t;
+    }
+    if(key < p->data)
+        p->lchild = Rinsert(p->lchild, key);
+    else (key > p->data)
+        p->rchild = Rinsert(p->rchild, key);
+        
+    return p;
+}
+
 int main()
 {
     struct Node *temp;
 
-    insert(10);
-    insert(5);
-    insert(20);
-    insert(8);
-    insert(30);
+    // insert(10);
+    // insert(5);
+    // insert(20);
+    // insert(8);
+    // insert(30);
+
+    // recursive insertion function call
+    root=Rinsert(root,10);
+    Rinsert(root,5);
+    Rinsert(root,20);
+    Rinsert(root,8);
+    Rinsert(root,30);
+
 
     inOrder(root);
-    cout<<endl;
+    cout<<"Elements are: "<<endl;  
     
     temp = Search(20);
     if(temp!=NULL)
