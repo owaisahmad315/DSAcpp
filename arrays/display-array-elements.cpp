@@ -17,9 +17,6 @@ void display(struct Array arr)
         cout<<arr.A[i];
 };
 
-
-
-
 int main()
 
 {   struct Array arr;
@@ -40,8 +37,5 @@ int main()
         arr.length = n;
         
     display(arr);
-
-
-
     return 0;
 }
