@@ -25,6 +25,7 @@ int MoveToFront(struct Array *arr, int key)
             Swap(&arr->A[i], &arr->A[0]);
             return i;
           }  
+          
     }
     return -1;
 }
@@ -38,14 +39,15 @@ void Display(struct Array arr)
 int main()
 {
     struct Array arr ={{2,4,6,8,10}, 10, 5};
-    int key = 8;
+    int key = 10;
     cout<<"the key before moving to front ";
     Display(arr);
     cout<<endl;
-    MoveToFront(&arr, key);
+    cout<<MoveToFront(&arr, key);
+    cout<<endl;
     cout<<"the key after moving to front ";
     Display(arr);
 
-    
+
 return 0;
 }
