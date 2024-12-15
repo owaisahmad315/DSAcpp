@@ -9,14 +9,14 @@ struct Array
     int length;
 };
 
-int BinSearch(struct Array arr, int key)
+int BinarySearch(struct Array arr, int key)
 {
     int l,h,mid;
     l = 0;
     h= arr.length-1;
     
    
-   
+   // this is iterative method
     while (l<= h)
     {
         mid = floor((l+h)/2);
@@ -44,7 +44,7 @@ int main()
     struct Array arr ={{2,3,4,5,6}, 10,5};
     int key = 5;
     
-    int result = BinSearch(arr, key);
+    int result = BinarySearch(arr, key);
     if(result != -1)
     cout<<"Binary search key index is "<<result;
     else
