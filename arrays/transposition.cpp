@@ -10,28 +10,23 @@ struct Array
     int length;
 };
 
-int Swap(int *x, int *y)
+void Swap(int *x, int *y)
 {   
     int temp = *x;
     *x = *y;
     *y = temp;
-
-    return 0;
 }
 
-int Transposition(struct Array *arr, int key)
+void Transposition(struct Array *arr, int key)
 { int i;
     for(i=0; i<arr->length; i++)
     {
         if(key == arr->A[i])
         {
             Swap(&arr->A[i], &arr->A[i-1]);
-            return i-1;
-            
-        }
-        
+            return i-1; 
+        }   
     }
-    return i-1;
 }
 void Display(struct Array arr)
 {
