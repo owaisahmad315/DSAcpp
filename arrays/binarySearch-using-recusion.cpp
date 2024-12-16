@@ -6,14 +6,15 @@ struct Array
 {
     int A[10];
     int size;
-    int lenght;
+    int length;
 };
 
 int BinarySearch(struct Array arr, int l, int h, int key)
 {
+    int mid;
     if(l<=h)
     {   
-        int mid = floor((l+h)/2);
+        mid = floor((l+h)/2);
         if(key==arr.A[mid])
             return mid;
         else if(key < arr.A[mid])
@@ -21,20 +22,20 @@ int BinarySearch(struct Array arr, int l, int h, int key)
         else
             return BinarySearch(arr,  mid + 1, h, key);
     }
-    return -1;
-        
+    else
+        return -1;      
 }
 
 int main()
 {
     struct Array arr = {{2,3,4,5,6}, 10,5};
     int key = 7;
-    int result = BinarySearch(arr, 0, arr.lenght, key);
+    int result = BinarySearch(arr, 0, arr.length-1, key);
 
     if(result != -1)
-    cout<<"Binary search key index is "<<result;
+      cout<<"Binary search key index is "<<result;
     else
-        cout<<"Binary search key is not found.."<<result;
+      cout<<"Binary search key is not found.."<<result;
 
     return 0;
 }
