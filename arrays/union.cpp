@@ -23,6 +23,11 @@ struct Array* Union(struct Array *arr1, struct Array *arr2)
         arr3->A[k++] = arr1->A[i++];
         j++;
     }
+
+    for ( ;i<arr1->length; i++)
+        arr3->A[k++] = arr1->A[i];
+    for ( ;j< arr2->length; j++)
+        arr3->A[k++] = arr2->A[j];
     
     arr3->length = k;
     arr3->size = 10;
