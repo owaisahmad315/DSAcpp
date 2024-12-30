@@ -4,7 +4,7 @@ using namespace std; // Add this line to use cout
 
 struct Node {
     int data;
-    struct Node* next;
+    Node* next;
 };
 
  Node *first = NULL;
