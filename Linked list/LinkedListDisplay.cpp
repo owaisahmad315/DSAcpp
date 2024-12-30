@@ -7,11 +7,11 @@ struct Node {
     struct Node* next;
 };
 
-struct Node* first = NULL;
+ Node *first = NULL;
 
 void create(int A[], int n) {
     int i;
-    struct Node *t, *last;
+    Node *t, *last;
 
     first = new Node;
     first->data = A[0];
