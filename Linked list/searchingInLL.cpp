@@ -28,6 +28,7 @@ void Create(int A[], int n)
     }
 }
 
+// iterative
 Node *Search(Node *p, int key)
 {
     while(p != NULL)
@@ -40,12 +41,24 @@ Node *Search(Node *p, int key)
     return 0;
 }
 
+// recursive function to search for a key in a linked list
+Node *Rsearch(Node *p, int key)
+{
+    if(p == NULL)
+        return 0;
+    else if(p->data == key)
+        return p;
+    else
+        return Rsearch(p=p->next, key);
+}
+
 
 int main()
 {
     int A[] = {3,5,19,9,10,15};
     Create(A,6);
-    cout<<Search(first, 11);
+    //cout<<Search(first, 11);
+    cout<<Rsearch(first, 10);
 
     return 0;
 }
