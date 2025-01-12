@@ -1,6 +1,5 @@
 #include <iostream>
-
-using namespace std; // Add this line to use cout
+using namespace std; 
 
 struct Node {
     int data;
@@ -10,7 +9,7 @@ struct Node {
  Node *first = NULL;
 
 void create(int A[], int n) {
-    int i;
+    int i;        
     Node *t, *last;
 
     first = new Node;
@@ -27,7 +26,7 @@ void create(int A[], int n) {
     }
 }
 
-void Display(struct Node* p) {
+void Display(Node* p) {
     while (p != NULL) {
         cout << p->data << " "; // corrected the format specifier and added space
         p = p->next;

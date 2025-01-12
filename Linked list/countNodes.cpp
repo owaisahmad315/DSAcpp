@@ -28,7 +28,7 @@ void Create(int A[], int n)
     }
 }
 
-int Count(countNodes *p)
+int Count(countNodes *p) // iterative verison
 {
     int count = 0;
     while (p!= NULL)
@@ -37,6 +37,14 @@ int Count(countNodes *p)
         p=p->next;
     }
     return count;
+}
+
+int Rcount(countNodes *p)
+{
+    if(p == NULL)
+        return 0;
+    else    
+        return Rcount(p->next) + 1;
 }
 
 void Display(countNodes *p)
@@ -53,9 +61,10 @@ int main()
 {
     int A[] = {3,5,7,10,15};
 
-    Create(A, 5);
+    Create(A,5);
     Display(first);
-    cout<<Count(first);
+    cout<<"Using iterative version "<<Count(first);
+    cout<<"Using Recursion version "<<Rcount(first);
 
     return 0;
 }
