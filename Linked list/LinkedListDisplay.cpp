@@ -28,7 +28,7 @@ void create(int A[], int n) {
 
 void Display(Node* p) {
     while (p != NULL) {
-        cout << p->data << " "; // corrected the format specifier and added space
+        cout << p->data << " "; 
         p = p->next;
     }
 }
