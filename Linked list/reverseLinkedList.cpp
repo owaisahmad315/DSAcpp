@@ -38,7 +38,8 @@ int Length(Node *p)
     return length;
 }
 
-void Reverse(Node *p)
+// this function is just reversing the elements in the linked list not the actual nodes
+void ReverseElements(Node *p)
 {
   Node *q =p;
   int *A, i =0;
@@ -63,6 +64,21 @@ void Reverse(Node *p)
   delete []A; 
 }
 
+void ReverseNodes(Node *p)
+{
+    Node *r, *q;
+    r=q=NULL;
+    while (p != NULL)
+    {
+        r=q;
+        q=p;
+        p= p->next;
+        q->next =r;
+    }
+    first = q;
+    
+}
+
 void Display(Node* p) {
     cout<< ": ";
     while (p != NULL) {
@@ -80,7 +96,7 @@ int main()
     Create(A, 5);
     Display(first);
 
-    Reverse(first);
+    ReverseNodes(first);
     Display(first);
 
     return 0;
