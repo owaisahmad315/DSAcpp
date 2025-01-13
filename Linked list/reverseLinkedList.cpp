@@ -1,13 +1,16 @@
 #include <iostream>
 using namespace std; 
 
+// Here all the three types of reversing a linked list are available, 
+// to use them just make a function a call to the desired function.
+
 struct Node {
     int data;
     Node* next;
 };
 
  Node *first = NULL;
-
+// this Create function is used to create a linked list
 void Create(int A[], int n) {
     int i;        
     Node *t, *last;
@@ -38,7 +41,8 @@ int Length(Node *p)
     return length;
 }
 
-// this function is just reversing the elements in the linked list not the actual nodes
+// this function is just reversing the elements in the linked list,
+// not the actual nodes
 void ReverseElements(Node *p)
 {
   Node *q =p;
@@ -64,6 +68,7 @@ void ReverseElements(Node *p)
   delete []A; 
 }
 
+// this function is reversing the whole node is a linked list
 void ReverseNodes(Node *p)
 {
     Node *r, *q;
@@ -78,6 +83,21 @@ void ReverseNodes(Node *p)
     first = q;
     
 }
+
+// using recursion nodes are being reversed in a linked list
+void ReverseNodesUsingRecursion(Node *q, Node *p)
+{
+    if(p != NULL)
+    {
+        ReverseNodesUsingRecursion(p, p->next);
+        p->next = q;
+    }
+    else
+    {
+        first =q;
+    }
+}
+
 
 void Display(Node* p) {
     cout<< ": ";
@@ -96,7 +116,7 @@ int main()
     Create(A, 5);
     Display(first);
 
-    ReverseNodes(first);
+    ReverseNodesUsingRecursion(NULL, first);
     Display(first);
 
     return 0;
